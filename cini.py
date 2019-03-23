@@ -10,10 +10,8 @@ import click
 def main(file, kv, inplace):
     config = configparser.ConfigParser()
     config.read(file)
-    print(config.sections())
     for k, v in map(lambda x: x.split("="), kv):
         sec, item = k.split(".")
-        print(sec, item, v)
         if sec not in config:
             config.add_section(sec)
         config[sec][item] = v
