@@ -3,7 +3,7 @@ import configparser
 import click
 
 
-@click.command(help='Example: cini "section1.item1=new"  "section2.item2=new"')
+@click.command(help='Example: cini "section1.item1=new"  "section2.item2=new" -f cfg.ini')
 @click.argument("kv", type=str, nargs=-1)
 @click.option("--file", "-f", help="file name")
 @click.option("--inplace", "-i", help="inplace", default=False, is_flag=True)
